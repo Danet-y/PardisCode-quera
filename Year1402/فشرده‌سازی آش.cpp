@@ -1,68 +1,82 @@
-#pragma optimize("O3")
+// In the name of Allah
+
 #include <bits/stdc++.h>
-#define int long long int 
-#define dint long double
-#define endl "\n"
-#define pii pair<int, int>
-#define pb push_back
-#define F first
-#define S second
-#define all(x) x.begin(), x.end()
- 
 using namespace std;
-typedef long long ll;
-typedef long double ld;
 
- 
-const int MAXN = (int)1e6 + 7;
-const int MOD = (int)1e9 + 7;
-const int INF = (int)1e18 + 7;
+typedef long long int	ll;
+typedef long double	ld;
+typedef pair<int, int>	pii;
+typedef pair<ll, ll>	pll;
 
-int POW(int x, int y) {
-    return (!y ? 1 : (y & 1 ? x * POW(x * x, y / 2) : POW(x * x, y / 2)));
+#define all(x)		(x).begin(),(x).end()
+#define len(x)		((ll) (x).size())
+#define F		first
+#define S		second
+#define pb		push_back
+#define sep             ' '
+#define endl            '\n'
+#define Mp		make_pair
+#define debug(x)	cerr << #x << ": " <<  x << endl;
+#define kill(x)		cout << x << '\n', exit(0)
+#define set_dec(x)	cout << fixed << setprecision(x);
+#define file_io(x,y)	freopen(x, "r", stdin); freopen(y, "w", stdout);
+
+const int maxn = 26;
+vector<int> adj[maxn], adjr[maxn];
+bool mark[maxn]; int Tx[maxn];
+int col[maxn], c = 0;
+
+void dfs(int v) {
+	mark[v] = 1; col[v] = c;
+	for (int u : adj[v]) {
+		if (!mark[u]) dfs(u);
+	}
+	for (int u : adjr[v]) {
+		if (!mark[u]) dfs(u);
+	}
 }
 
- 
-int n, m, tmp, tmp2, tmp3, c, t, k, ans, flag, a, b, cnt2, cmp, cmp2, mid, v, w, u;
-int arr[MAXN], kol[MAXN], ps[MAXN], arr2[MAXN];
-string s;
-map<char, int> sar, tah;
-
-void solve() {
-    cin >> n;
-
-    sar.clear();
-    tah.clear();
-
-    ans = 0;
-
-    for (int i=1; i<=n; i++) {
-        cin >> s;
-        ans += s.size();
-        
-        sar[s[0]]++;
-        if (s.size() != 1) {
-            tah[s.back()]++;
-        }
-    }
-
-    for (auto ch='a'; ch<='z'; ch++) {
-        ans -= min(sar[ch], tah[ch]);
-    }
-
-    cout << ans << endl;
+int main() {
+	ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+	
+	int T;
+	cin >> T;
+	while (T--) {
+		int n;
+		cin >> n;
+		string s[n];
+		
+		ll output = 0;
+		for (int i = 0; i < maxn; i++) {
+			adj[i].clear(); adjr[i].clear();
+		}
+		for (int i = 0; i < n; i++) {
+			cin >> s[i];
+			int u = s[i][0] - 'a', v = s[i][len(s[i]) - 1] - 'a';
+			adj[u].pb(v); adjr[v].pb(u);
+			
+			output += len(s[i]);
+		}
+		output -= n;
+		
+		fill(mark, mark + maxn, 0); c = 0;
+		for (int i = 0; i < maxn; i++) {
+			if (!mark[i] && len(adj[i]) != 0) {
+				dfs(i); c++;
+			}
+		}
+		
+		fill(Tx, Tx + maxn, 0);
+		for (int i = 0; i < maxn; i++) {
+			if (len(adj[i]) > len(adjr[i])) Tx[col[i]] += (len(adj[i]) - len(adjr[i]));
+		}
+		
+		for (int i = 0; i < c; i++) {
+			if (Tx[i] == 0) output++;
+			else output += Tx[i];
+		}
+		cout << output << endl;
+	}
+	
+	return 0;
 }
-
-int32_t main() {
-    ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
-
-    cin >> t;
-
-    while (t--) solve();
-
-
- 
-    return 0;
-}
-
-//ShayanSh
