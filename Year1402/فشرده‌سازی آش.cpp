@@ -1,6 +1,6 @@
 #pragma optimize("O3")
 #include <bits/stdc++.h>
-#define int long long int
+#define int long long int 
 #define dint long double
 #define endl "\n"
 #define pii pair<int, int>
