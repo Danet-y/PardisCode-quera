@@ -21,7 +21,6 @@ const int INF = (int)1e18 + 7;
 int POW(int x, int y) {
     return (!y ? 1 : (y & 1 ? x * POW(x * x, y / 2) : POW(x * x, y / 2)));
 }
-
  
 int n, m, tmp, tmp2, tmp3, c, t, k, ans, flag, a, b, cnt2, cmp, cmp2, mid, v, w, u;
 int arr[MAXN], kol[MAXN], ps[MAXN], arr2[MAXN];
