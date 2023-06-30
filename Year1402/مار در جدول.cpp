@@ -7,7 +7,7 @@ using namespace std;
 #define int long long int
 #define F first
 #define S second
-#define tagh2(j) j>>1
+#define tagh2(j) j>>1 
 #define zarb2(j) j<<1
 const int N=100,MX=2e4+23,mod=229939;
 int dp[N][N][N];
