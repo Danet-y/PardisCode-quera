@@ -8,7 +8,7 @@
 </h2> 
 
 <div align="center">
-## Solved By Danet,ShayaSh,Ilia
+##Solved By Danet,ShayaSh,Ilia
 
 </div>
 
