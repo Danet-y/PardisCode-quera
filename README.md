@@ -11,7 +11,6 @@
 
 ## Solved By Danet,ShayaSh,Ilia (+E solution by Alish)
 
-"فشرده‌سازی آش" unsolved
 </div>
 
 
