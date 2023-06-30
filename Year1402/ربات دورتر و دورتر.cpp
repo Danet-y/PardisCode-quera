@@ -1,5 +1,5 @@
 // IN THE NAME OF GOD
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> 
 #define endl '\n'
 #define file_reading freopen("input.txt", "r", stdin); freopen("output.txt", "w", stdout);
 #define flush cout.flush();
