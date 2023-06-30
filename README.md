@@ -8,8 +8,7 @@
 </h2> 
 
 <div align="center">
-##حل شده توسط ShayanSh.iliaAghazadeh.Danet
-
+## Solved By Danet,ShayaSh,Ilia
 
 </div>
 
