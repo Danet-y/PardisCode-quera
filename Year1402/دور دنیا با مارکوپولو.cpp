@@ -3,7 +3,7 @@ using namespace std;
 #define Tof_Io ios_base::sync_with_stdio(false);cin.tie(0) , cout.tie(0);
 #define pb push_back
 #define mk make_pair
-#define all(v) v.begin(),v.end()
+#define all(v) v.begin(),v.end() 
 #define int long long int
 #define F first
 #define S second
