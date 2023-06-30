@@ -10,6 +10,8 @@
 <div align="center">
 
 ## Solved By Danet,ShayaSh,Ilia
+
+"فشرده‌سازی آش" unsolved
 </div>
 
 
