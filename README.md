@@ -9,9 +9,7 @@
 
 <div align="center">
 
-  
 ## Solved By Danet,ShayaSh,Ilia
-
 </div>
 
 
