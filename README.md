@@ -9,7 +9,7 @@
 
 <div align="center">
 
-## Solved By Danet,ShayaSh,Ilia
+## Solved By Danet,ShayaSh,Ilia (+E solution by Alish)
 
 "فشرده‌سازی آش" unsolved
 </div>
